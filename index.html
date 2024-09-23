@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Book Introduction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="book-container">
+        <div class="book" id="book">
+            <!-- Page Pair 1 -->
+            <div class="page-pair" id="pair1">
+                <!-- Page 1: Lis's Introduction Image (Left Page) -->
+                <div class="page left-page">
+                    <img src="lis-character.svg" alt="Lis the AI researcher" class="character-image">
+                </div>
+                
+                <!-- Page 2: Lis's Introduction Text (Right Page) -->
+                <div class="page right-page">
+                    <h1><br> <br>Hallo!</h1>
+                    <!--<p>Allow me to introduce myself. I'm Lis, an AI researcher who has been exploring the fascinating world of artificial intelligence (AI) for decades.  <br> Today, I want to take you on an exciting journey through the evolution of AI. <br> Are you ready to explore this fantastic story? <br> <strong> Let's dive in! </strong></p> -->
+                    <p><br> <br><br> <br>Gestatten Sie mir, mich vorzustellen. Ich bin Lis, eine KI-Forscherin, die sich seit Jahrzehnten mit der faszinierenden Welt der künstlichen Intelligenz (KI) beschäftigt.
+                        <br> <br> Heute möchte ich Sie auf eine spannende Reise durch die Entwicklung der KI mitnehmen.
+                        <br><br> Sind Sie bereit, diese fantastische Geschichte zu erkunden?
+                        <br> <br><br><br> <strong> Tauchen wir ein! </strong></p>
+                </div>
+        
+            </div>
+
+            <!-- Page Pair 2 -->
+            <div class="page-pair" id="pair2">
+                <!-- Page 3: Chapter 1 Title (Left Page) -->
+                <div class="page left-page">
+                    <h2 class="chapter-title">Kapitel 1: Der ehrgeizige Traum von intelligenten Maschinen</h2>
+                </div>
+                
+                <!-- Page 4: Chapter 1 Content (Right Page) -->
+                <div class="page right-page">
+                    <h2>What is AI?</h2>
+                    <p>Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that are programmed to think and learn. The idea of AI has been around for decades, evolving from simple algorithms to complex systems capable of tasks like language processing, image recognition, and decision-making.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="navigation">
+            <button id="prev-btn" onclick="prevPage()">⬅ Previous</button>
+            <button id="next-btn" onclick="nextPage()">Next ➡</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
