@@ -5,8 +5,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Ensure the book container fills the screen */
     margin: 0;
+    padding: 0;
 }
 
 #book-container {
@@ -14,6 +15,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 10px;
+    width: 100%; /* Ensure the container takes full width */
 }
 
 .book {
@@ -42,6 +44,7 @@ body {
     box-sizing: border-box;
     background-color: #fffefb;
     box-shadow: inset 10px 0 20px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable scrolling if content overflows */
 }
 
 .left-page {
@@ -50,6 +53,17 @@ body {
 
 .right-page {
     padding-left: 20px;
+}
+
+/* Responsive Headings */
+h1, h2 {
+    font-size: 2em; /* Base size */
+    margin: 10px 0; /* Adjust margin for consistency */
+}
+
+p {
+    font-size: 1em; /* Base size for paragraphs */
+    line-height: 1.5; /* Improved readability */
 }
 
 /* Responsive Images */
@@ -105,7 +119,7 @@ iframe {
 
     .page {
         width: 100%; /* Make pages full width */
-        padding: 15px; /* Adjust padding */
+        padding: 10px; /* Adjust padding */
         box-shadow: none; /* Remove shadows */
     }
 
@@ -115,19 +129,33 @@ iframe {
     }
 
     .right-page {
-        padding-left: 15px;
+        padding-left: 10px;
     }
 
-    .navigation button {
-        padding: 8px 15px; /* Adjust button size */
-        font-size: 14px; /* Adjust font size */
-        margin: 5px; /* Adjust spacing */
+    /* Adjust heading and paragraph sizes for mobile */
+    h1, h2 {
+        font-size: 1.5em; /* Reduced size */
+    }
+
+    p {
+        font-size: 0.9em; /* Reduced paragraph size */
     }
 
     /* Adjust embedded content for smaller screens */
     iframe {
         width: 100%;
         height: 200px; /* Limit iframe height on mobile */
+    }
+
+    .character-image {
+        width: 100%;
+        max-width: 100%; /* Ensure image fits within container */
+    }
+
+    .navigation button {
+        padding: 8px 12px; /* Adjust button size */
+        font-size: 14px; /* Adjust font size */
+        margin: 5px; /* Adjust spacing */
     }
 }
 
