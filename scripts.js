@@ -10,6 +10,9 @@ window.onload = function() {
             pair.style.display = i === index ? 'flex' : 'none';
         });
 
+        // Update the progress bar
+        updateProgressBar(index, pagePairs.length);
+
         // Control the visibility of 'Previous' and 'Next' buttons
         document.getElementById('prev-btn').style.display = index === 0 ? 'none' : 'inline-block';
         document.getElementById('next-btn').style.display = index === pagePairs.length - 1 ? 'none' : 'inline-block';
@@ -31,6 +34,19 @@ window.onload = function() {
         }
     }
 
+    // Function to update the progress bar
+    function updateProgressBar(currentIndex, totalPairs) {
+        const progressFill = document.getElementById('progress-fill');
+        const lampIcon = document.getElementById('lamp-icon');
+        const progressPercentage = ((currentIndex + 1) / totalPairs) * 100;
+        
+        // Update the width of the progress fill
+        progressFill.style.width = progressPercentage + '%';
+
+        // Move the lamp icon to the edge of the progress fill
+        lampIcon.style.left = `calc(${progressPercentage}% - 15px)`; // Adjust based on the lamp icon's size
+    }
+
     // Initialize by showing the first pair of pages
     showPagePair(currentPairIndex);
-}
+};

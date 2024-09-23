@@ -3,19 +3,20 @@ body {
     background-color: #e4e39e;
     font-family: 'Fira Sans', serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 100vh; /* Ensure the book container fills the screen */
     margin: 0;
     padding: 0;
 }
 
+/* Book Container */
 #book-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
     width: 100%; /* Ensure the container takes full width */
+    position: relative;
 }
 
 .book {
@@ -131,6 +132,48 @@ iframe {
 
 .navigation button:hover {
     background-color: #555;
+}
+
+/* Progress Bar Container */
+#progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%; /* Match the width of the book */
+    max-width: 1200px; /* Match the book's max width */
+    margin: 30px 0 10px 0; /* Add sufficient margin at the top */
+    position: relative;
+    z-index: 10;
+}
+
+#progress-bar {
+    width: 100%; /* Make progress bar take full width of the container */
+    height: 30px; /* Increased height of the progress bar */
+    background-color: #ddd; /* Background color of the progress bar */
+    border-radius: 15px; /* Adjusted rounded edges */
+    overflow: hidden; /* Ensure the fill does not overflow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a slight shadow for depth */
+    position: relative; /* Enable absolute positioning for the lamp */
+}
+
+#progress-fill {
+    width: 0%; /* Start at 0% */
+    height: 100%; /* Fill the entire height */
+    background: linear-gradient(90deg, #4CAF50, #1E90FF); /* Gradient color */
+    transition: width 0.4s ease; /* Smooth transition for the progress */
+    border-radius: 15px; /* Adjusted rounded edges */
+    position: relative;
+}
+
+#lamp-icon {
+    position: absolute;
+    top: 0px; /* Adjust the position to ensure the lamp icon is fully visible */
+    left: 0; /* Start position of the lamp */
+    width: 30px; /* Adjust the size of the lamp icon */
+    height: 30px; /* Ensure it's proportionate */
+    transition: left 0.4s ease; /* Move smoothly with the progress */
+    pointer-events: none; /* Ensure the icon does not interfere with clicking */
+    z-index: 5; /* Ensure the lamp is above the progress bar */
 }
 
 /* Responsive Design - Mobile */
