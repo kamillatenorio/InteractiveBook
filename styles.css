@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     background-color: #e4e39e;
-    font-family: 'Fira', serif;
+    font-family: 'Fira Sans', serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,6 +21,7 @@ body {
 .book {
     width: 90%; /* Adjust to fit screen width */
     max-width: 1200px; /* Maximum width */
+    height: 800px; /* Increased height of the book */
     position: relative;
     display: flex;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
@@ -33,7 +34,7 @@ body {
 .page-pair {
     display: flex;
     width: 100%;
-    height: 600px; /* Adjusted height */
+    height: 100%; /* Make sure it takes the full height of the book */
     border-radius: 10px;
     display: none; /* Hide all pairs initially */
 }
@@ -45,25 +46,55 @@ body {
     background-color: #fffefb;
     box-shadow: inset 10px 0 20px rgba(0, 0, 0, 0.1);
     overflow-y: auto; /* Enable scrolling if content overflows */
+    display: flex; /* Use Flexbox for centering */
+    flex-direction: column;
+    justify-content: flex-start; /* Keep content aligned at the top */
+    align-items: center; /* Center content horizontally */
 }
 
 .left-page {
     border-right: 1px solid #ccc;
+    color: #000;
+    font-family: "Fira Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
 
 .right-page {
     padding-left: 20px;
+    color: #000;
+    font-family: "Fira Sans";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
 
-/* Responsive Headings */
-h1, h2 {
-    font-size: 2em; /* Base size */
-    margin: 10px 0; /* Adjust margin for consistency */
+.citation {
+    padding-left: 20px;
+    color: #000;
+    font-family: "Fira Sans";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
 
-p {
-    font-size: 1em; /* Base size for paragraphs */
-    line-height: 1.5; /* Improved readability */
+/* Center the chapter-title in the left page */
+.chapter-title {
+    font-size: 2em; /* Adjust size as needed */
+    margin: 0; /* Remove default margin */
+    text-align: left; /* Align text to the left */
+    color: #000;
+    font-family: "Fira Sans";
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    width: 100%; /* Ensure the title spans the full width */
+    text-align: center; /* Center the text in the middle of the page */
 }
 
 /* Responsive Images */
@@ -71,9 +102,7 @@ p {
     width: 100%; /* Make image take up full width */
     height: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Ensure the image doesn't overflow */
-    border: 1px solid #ccc;
     padding: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Iframe */
@@ -110,6 +139,7 @@ iframe {
     .book {
         width: 100%; /* Make book take full width on smaller screens */
         max-width: 100%; /* No max width limit */
+        height: auto; /* Allow flexible height */
     }
 
     .page-pair {
@@ -121,6 +151,7 @@ iframe {
         width: 100%; /* Make pages full width */
         padding: 10px; /* Adjust padding */
         box-shadow: none; /* Remove shadows */
+        justify-content: flex-start; /* Keep content aligned at the top */
     }
 
     .left-page {
@@ -135,6 +166,10 @@ iframe {
     /* Adjust heading and paragraph sizes for mobile */
     h1, h2 {
         font-size: 1.5em; /* Reduced size */
+    }
+
+    .chapter-title {
+        font-size: 1.8em; /* Adjust chapter title size for mobile */
     }
 
     p {
@@ -164,10 +199,11 @@ iframe {
     .book {
         width: 95%; /* Use most of the screen */
         max-width: 1000px; /* Maximum width */
+        height: 700px; /* Adjusted height */
     }
 
     .page-pair {
-        height: 500px; /* Adjusted height */
+        height: 100%; /* Make sure it takes the full height of the book */
     }
 
     .page {
