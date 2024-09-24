@@ -83,11 +83,21 @@ body {
     line-height: normal;
 }
 
+.activity {
+    padding-left: 20px;
+    color: #470977;
+    font-family: "Fira Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
 /* Center the chapter-title in the left page */
 .chapter-title {
     font-size: 2em; /* Adjust size as needed */
     margin: 0; /* Remove default margin */
-    text-align: center; /* Center text alignment */
+    text-align: left; /* Center text alignment */
     color: #000;
     font-family: "Fira Sans";
     font-size: 52px;
