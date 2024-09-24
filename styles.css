@@ -126,12 +126,22 @@ body {
     width: 100%; /* Ensure the title spans the full width */
 }
 
-/* Responsive Images */
 .character-image {
-    width: 80%; /* Make image take up full width */
+    width: 100%; /* Make image take up full width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure the image doesn't overflow */
+    margin-bottom: 5px; /* Add a very small margin to ensure it's close but not touching the bottom */
+    padding: 0; /* Remove any padding */
+    object-fit: contain; /* Ensure the image fits well within its container */
+}
+
+/* Responsive Images */
+.image {
+    width: 90%; /* Make image take up full width */
     height: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Ensure the image doesn't overflow */
     padding: 5px;
+    border-radius: 20px;
 }
 
 /* Responsive Iframe */
