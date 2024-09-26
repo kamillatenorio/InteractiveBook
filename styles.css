@@ -104,11 +104,11 @@ body {
 
 .activity {
     padding-left: 20px;
-    color: #470977;
+    color: #000000;
     font-family: "Fira Sans";
-    font-size: 18px;
+    font-size: 22px;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 200;
     line-height: normal;
 }
 
