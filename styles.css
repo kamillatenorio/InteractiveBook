@@ -22,7 +22,7 @@ body {
 .book {
     width: 90%; /* Adjust to fit screen width */
     max-width: 1200px; /* Maximum width */
-    height: 800px; /* Height of the book */
+    height: 850px; /* Height of the book */
     position: relative;
     display: flex;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
