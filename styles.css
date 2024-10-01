@@ -135,6 +135,15 @@ body {
     object-fit: contain; /* Ensure the image fits well within its container */
 }
 
+.corner-image {
+    bottom: 0; /* Position at the bottom */
+    left: 0; /* Position at the left */
+    max-width: 100%;
+    width: 200px;
+    height: 200px;
+    object-fit: contain; 
+  }
+
 /* Responsive Images */
 .image {
     width: 90%; /* Make image take up full width */
@@ -264,6 +273,11 @@ iframe {
     }
 
     .character-image {
+        width: 100%;
+        max-width: 100%; /* Ensure image fits within container */
+    }
+
+    .corner-image{
         width: 100%;
         max-width: 100%; /* Ensure image fits within container */
     }
