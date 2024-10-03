@@ -46,6 +46,7 @@ body {
     height: 100%; /* Full height of the book */
     border-radius: 10px;
     display: none; /* Hide all single pages initially */
+    padding-bottom: 40px;
 }
 
 .page {
@@ -59,6 +60,7 @@ body {
     flex-direction: column;
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
+    padding-bottom: 40px; 
 }
 
 .left-page {
@@ -182,6 +184,27 @@ iframe {
     background-color: #555;
 }
 
+/* Style for the page numbers */
+.page-number {
+    position: absolute;
+    bottom: 10px;
+    font-size: 14px;
+    color: #666;
+    font-family: 'Fira Sans', serif;
+}
+
+.page-number.left {
+    left: 20px; /* Bottom left for left pages */
+}
+
+.page-number.right {
+    right: 20px; /* Bottom right for right pages */
+}
+
+.page-number.hide {
+    display: none;
+}
+
 /* Progress Bar Container */
 #progress-bar-container {
     display: flex;
@@ -287,6 +310,11 @@ iframe {
         font-size: 14px; /* Adjust font size */
         margin: 5px; /* Adjust spacing */
     }
+
+    .page-number {
+        display: none;
+    }
+
 }
 
 /* Responsive Design - Tablets */

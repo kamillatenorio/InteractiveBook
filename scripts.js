@@ -2,6 +2,7 @@ window.onload = function() {
     // Select all page pairs and single pages in their order of appearance
     const allPages = document.querySelectorAll('.page-pair, .page-single');
     let currentPageIndex = 0; // Start at the first page
+    const isSmallScreen = window.innerWidth <= 768; // Detect if screen size is small
 
     // Array of questions for the quiz
     const quizQuestions = [
@@ -25,8 +26,10 @@ window.onload = function() {
         document.getElementById("question").innerText = quizQuestion.question;
         document.getElementById("label1").innerText = quizQuestion.options[0];
         document.getElementById("label2").innerText = quizQuestion.options[1];
-        document.getElementById("label3").innerText = quizQuestion.options[2];
-        document.getElementById("label4").innerText = quizQuestion.options[3];
+        if (quizQuestion.options.length > 2) {
+            document.getElementById("label3").innerText = quizQuestion.options[2];
+            document.getElementById("label4").innerText = quizQuestion.options[3];
+        }
         
         // Clear any previously selected option and enable inputs
         document.querySelectorAll('input[name="option"]').forEach(option => {
@@ -113,4 +116,33 @@ window.onload = function() {
 
     // Initialize by showing the first page (either pair or single)
     showPage(currentPageIndex);
+
+    // Adding page numbers (except for page 1 and 2)
+    const pages = document.querySelectorAll('.page');
+    let pageNumber = 3; // Start from page 3
+
+    pages.forEach((page, index) => {
+        if (index >= 2) { // Skip first two pages (0 and 1)
+            let pageNumDiv = document.createElement('div');
+            pageNumDiv.className = 'page-number';
+
+            // Check if it's a small screen, and only add one page number if the pages are stacked
+            if (isSmallScreen) {
+                if (index % 2 === 0) { // Add the number only to one of the two pages
+                    pageNumDiv.classList.add('left'); // Center the number
+                    pageNumDiv.innerText = pageNumber++;
+                    page.appendChild(pageNumDiv);
+                }
+            } else {
+                // Regular behavior for large screens
+                if (page.classList.contains('left-page')) {
+                    pageNumDiv.classList.add('left');
+                } else if (page.classList.contains('right-page')) {
+                    pageNumDiv.classList.add('right');
+                }
+                pageNumDiv.innerText = pageNumber++;
+                page.appendChild(pageNumDiv);
+            }
+        }
+    });
 };
