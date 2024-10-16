@@ -50,7 +50,7 @@ window.onload = function() {
         const resultElement = document.getElementById("result");
 
         if (answer === quizQuestions[currentQuizQuestionIndex].answer) {
-            resultElement.innerText = "Richtig! Gehen Sie zur nächsten Seite, um mehr zu erfahren ...";
+            resultElement.innerText = "Richtig! Gehen Sie zur nächsten Seite, um mehr zu erfahren...";
             resultElement.style.color = "green"; 
         } else {
             resultElement.innerText = "Das stimmt so nicht! Laut aktuellen Forschungsergebnissen hat ChatGPT den Turing-Test bestanden! Gehen Sie zur nächsten Seite, um mehr zu erfahren...";
