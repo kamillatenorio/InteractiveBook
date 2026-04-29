@@ -92,6 +92,24 @@ body {
     align-items: center;
 }
 
+.eliza-iframe {
+    width: 85%;
+    max-width: 1200px;
+    height: 515px;
+    display: block;
+    margin: 0 auto;
+    aspect-ratio: auto;
+}
+
+.centered-video {
+    width: 85%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    display: block;
+    margin: 20px auto 0;
+}
+
 .citation {
     padding-left: 20px;
     color: #000;
